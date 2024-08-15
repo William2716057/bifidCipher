@@ -16,6 +16,13 @@ def input_matrix(rows, cols):
     
     return matrix
 
+def letter_indexes(matrix, letter):
+    indexes = []
+    for i, row in enumerate(matrix):
+        for j, value in enumerate(row):
+            if value == letter:
+                indexes.append((i, j))
+    return indexes
 # Define matrix dimensions
 rows = 5
 cols = 5
@@ -38,22 +45,32 @@ def letterIndexes(matrix, letter):
 
 message = "This is a message"
 
+row_indices = []
+col_indices = []
+
 for char in message:
-    char = char.capitalize()
-    if char != ' ':
-        indexes = letterIndexes(square, char)
-    if indexes:
-        print(indexes)
-    else:
-        print("not found")
+    char = char.upper()  # Convert to uppercase to match matrix values
+    if char != ' ':  # Skip spaces
+        indexes = letter_indexes(square, char)
+        if indexes:
+            for row, col in indexes:
+                row_indices.append(row + 1)  # Adding 1 to index to start from 1 instead of 0
+                col_indices.append(col + 1)  # Adding 1 to index to start from 1 instead of 0
+        else:
+            print(f"'{char}' not found in the matrix.")
+
+# Print all row and column indices in the desired format
+if row_indices and col_indices:
+    print(f"{', '.join(map(str, row_indices))}")
+    print(f"{', '.join(map(str, col_indices))}")
         
-square = input_matrix(rows, cols)
+#square = input_matrix(rows, cols)
 #print(square)
 
-row_index = 4
-col_index = 1
-newChar = square[row_index][col_index]
-print(row_index, col_index)
+#row_index = 4
+#col_index = 1
+#newChar = square[row_index][col_index]
+#print(row_index, col_index)
 #list out rows
 #list out columns
 #for char in indexes:
