@@ -1,12 +1,12 @@
 def input_matrix(rows, cols):
     #values = input(f"Enter {rows * cols} values, separated by spaces: ").split()
     values = "B G W K Z Q P N D S I O A X E F C L U M T H Y V R".split()
-    # Ensure we have the correct number of values
+    # Ensure correct number of values
     if len(values) != rows * cols:
         print("Error: The number of values entered does not match the matrix size.")
         return None
     
-    # Fill the matrix with the entered values
+    # Fill matrix with the values
     matrix = []
     index = 0
     for i in range(rows):
