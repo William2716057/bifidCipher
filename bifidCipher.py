@@ -36,11 +36,12 @@ def letterIndexes(matrix, letter):
                 indexes.append((i, j))
     return indexes
 
-message = "flower"
+message = "This is a message"
 
 for char in message:
     char = char.capitalize()
-    indexes = letterIndexes(square, char)
+    if char != ' ':
+        indexes = letterIndexes(square, char)
     if indexes:
         print(indexes)
     else:
