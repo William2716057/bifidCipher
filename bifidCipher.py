@@ -32,4 +32,19 @@ if square:
         
 def letterIndexes(matrix, letter):
     indexes = []
-    
+    for i, row in enumerate(matrix):
+        for j, value in enumerate(row):
+            if value == letter:
+                indexes.append((i, j))
+    return indexes
+
+letters = "FLOWER"
+#letter = letter.capitalize()
+
+for letter in letters:
+    indexes = letterIndexes(square, letter)
+    letter = letter.capitalize()
+    if indexes:
+        print(letter, indexes)
+    else:
+        print("not found")
