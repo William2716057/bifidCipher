@@ -1,11 +1,9 @@
 def input_matrix(rows, cols):
-    #values = input(f"Enter {rows * cols} values, separated by spaces: ").split()
     values = "B G W K Z Q P N D S I O A X E F C L U M T H Y V R".split()
     # Ensure correct number of values
     if len(values) != rows * cols:
         print("Error: The number of values entered does not match the matrix size.")
         return None
-    
     # Fill matrix with the values
     matrix = []
     index = 0
@@ -38,13 +36,12 @@ def letterIndexes(matrix, letter):
                 indexes.append((i, j))
     return indexes
 
-letters = "FLOWER"
-#letter = letter.capitalize()
+message = "flower"
 
-for letter in letters:
-    indexes = letterIndexes(square, letter)
-    letter = letter.capitalize()
+for char in message:
+    char = char.capitalize()
+    indexes = letterIndexes(square, char)
     if indexes:
-        print(letter, indexes)
+        print(indexes)
     else:
         print("not found")
