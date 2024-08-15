@@ -24,9 +24,9 @@ cols = 5
 square = input_matrix(rows, cols)
 
 # Print the matrix
-if square:
-    for row in square:
-        print(row)
+#if square:
+#    for row in square:
+#        print(row)
         
 def letterIndexes(matrix, letter):
     indexes = []
@@ -46,3 +46,15 @@ for char in message:
         print(indexes)
     else:
         print("not found")
+        
+square = input_matrix(rows, cols)
+#print(square)
+
+row_index = 4
+col_index = 1
+newChar = square[row_index][col_index]
+print(row_index, col_index)
+#list out rows
+#list out columns
+#for char in indexes:
+ #   print(char[0])
