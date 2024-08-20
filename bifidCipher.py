@@ -66,7 +66,21 @@ if row_indices and col_indices:
 
 combined = row_indices + col_indices
 print(combined)
-#function to find characters at row_indeces and col_indeces
+
+def get_characters_from_indices(matrix, indices):
+    characters = []
+    for i in range(0, len(indices), 2):  # Step by 2 to get pairs of row and column indices
+        row = indices[i] - 1  # Convert back to zero-based index
+        col = indices[i + 1] - 1  # Convert back to zero-based index
+        characters.append(matrix[row][col])
+    return characters
+
+# Use the combined list of indices to get the characters
+result_characters = get_characters_from_indices(square, combined)
+
+# Print the characters as a string
+print("".join(result_characters))
+#combined_indices = [(row - 1, col - 1) for row, col in zip(row_indices, col_indices)]
 
 
 #new_letter = square[row_index][col_index]
