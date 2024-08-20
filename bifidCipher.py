@@ -31,9 +31,9 @@ cols = 5
 square = input_matrix(rows, cols)
 
 # Print the matrix
-#if square:
-#    for row in square:
-#        print(row)
+if square:
+    for row in square:
+       print(row)
         
 def letterIndexes(matrix, letter):
     indexes = []
@@ -63,7 +63,16 @@ for char in message:
 if row_indices and col_indices:
     print(f"{', '.join(map(str, row_indices))}")
     print(f"{', '.join(map(str, col_indices))}")
-        
+
+combined = row_indices + col_indices
+print(combined)
+#function to find characters at row_indeces and col_indeces
+
+
+#new_letter = square[row_index][col_index]
+
+#print(row_indices[0,1])
+
 #square = input_matrix(rows, cols)
 #print(square)
 
