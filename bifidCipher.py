@@ -69,9 +69,9 @@ print(combined)
 
 def get_characters_from_indices(matrix, indices):
     characters = []
-    for i in range(0, len(indices), 2):  # Step by 2 to get pairs of row and column indices
-        row = indices[i] - 1  # Convert back to zero-based index
-        col = indices[i + 1] - 1  # Convert back to zero-based index
+    for i in range(0, len(indices), 2):  
+        row = indices[i] - 1  
+        col = indices[i + 1] - 1  
         characters.append(matrix[row][col])
     return characters
 
